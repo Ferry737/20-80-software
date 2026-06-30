@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+__pycache__
+.venv
+.dart_tool
+build
+dist
+*.node

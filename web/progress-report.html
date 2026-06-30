@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گزارش پیشرفت پروژه ۲۰-۸۰</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Vazirmatn', 'Inter', sans-serif; }
+    .gradient-medical { background: linear-gradient(135deg, #6ee7b7 0%, #a5f3fc 100%); }
+    .text-gradient { background: linear-gradient(135deg, #6ee7b7 0%, #a5f3fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white; color: black; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-8">
+  <div class="max-w-5xl mx-auto">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-3 text-gradient">پلتفرم بهره‌وری ۲۰/۸۰</h1>
+      <p class="text-slate-400 text-lg">گزارش پیشرفت پروژه — ۲۹ ژوئن ۲۰۲۶</p>
+      <div class="mt-6 inline-flex items-center gap-4 bg-slate-900/50 backdrop-blur px-6 py-4 rounded-2xl border border-slate-800">
+        <span class="text-slate-400">پیشرفت کلی:</span>
+        <span class="text-5xl font-bold text-gradient">۴۵٪</span>
+      </div>
+    </div>
+
+    <!-- Overall Progress Bar -->
+    <div class="mb-12 bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800">
+      <div class="flex justify-between mb-2">
+        <span class="font-medium">پیشرفت کلی پروژه</span>
+        <span class="text-accent font-bold">۴۵٪</span>
+      </div>
+      <div class="w-full bg-slate-800 rounded-full h-4">
+        <div class="gradient-medical h-4 rounded-full" style="width: 45%"></div>
+      </div>
+    </div>
+
+    <!-- Modules Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+      <!-- Backend -->
+      <div class="bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl gradient-medical flex items-center justify-center text-slate-900 font-bold">B</div>
+          <div>
+            <h3 class="font-bold text-lg">Backend (FastAPI)</h3>
+            <p class="text-slate-400 text-sm">Python / SQLAlchemy / PostgreSQL</p>
+          </div>
+        </div>
+        <div class="mb-3 flex justify-between">
+          <span>پیشرفت ماژول</span>
+          <span class="text-accent font-bold">۸۵٪</span>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-3 mb-4">
+          <div class="gradient-medical h-3 rounded-full" style="width: 85%"></div>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> ساختار Modular Monolith</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> ۵ دامنه کامل: auth, progress, tutor, time, automation</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> مدل‌های SQLAlchemy برای همه‌ی موجودیت‌ها</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> repositories + services + routers</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> main.py با اتصال دیتابیس</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> Dockerfile + docker-compose.yml</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> تست و دیباگ</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> تست و دیباگ</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> تست و دیباگ</li>
+        </ul>
+      </div>
+
+      <!-- Frontend Web -->
+      <div class="bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl gradient-medical flex items-center justify-center text-slate-900 font-bold">W</div>
+          <div>
+            <h3 class="font-bold text-lg">Web Frontend (Next.js)</h3>
+            <p class="text-slate-400 text-sm">React / TailwindCSS / shadcn/ui</p>
+          </div>
+        </div>
+        <div class="mb-3 flex justify-between">
+          <span>پیشرفت ماژول</span>
+          <span text-yellow-400 font-bold">۱۰٪</span>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-3 mb-4">
+          <div class="bg-yellow-400 h-3 rounded-full" style="width: 10%"></div>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> ساختار پوشه‌ای ایجاد شد</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> Tailwind + پالت رنگی سلامت/پزشکی</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> Layout أساسی RTL فارسی</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> کامپوننت‌های shadcn/ui</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> صفحات: داشبورد، اهداف، فوکوس، تدریس، اتوماسیون</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> اتصال به API backend</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> نمودارها و visualizations</li>
+        </ul>
+      </div>
+
+      <!-- Mobile -->
+      <div class="bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-slate-700 flex items-center justify-center text-slate-300 font-bold">M</div>
+          <div>
+            <h3 class="font-bold text-lg">Mobile (Flutter)</h3>
+            <p class="text-slate-400 text-sm">Dart / Flutter / cross-platform</p>
+          </div>
+        </div>
+        <div class="mb-3 flex justify-between">
+          <span>پیشرفت ماژول</span>
+          <span class="text-slate-500 font-bold">۰٪</span>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-3 mb-4">
+          <div class="bg-slate-600 h-3 rounded-full" style="width: 0%"></div>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-slate-600">○</span> اسکافولد پروژه Flutter</li>
+          <li class="flex items-center gap-2"><span class="text-slate-600">○</span> رابط کاربری موبایل</li>
+          <li class="flex items-center gap-2"><span class="text-slate-600">○</span> اتصال به backend</li>
+        </ul>
+      </div>
+
+      <!-- UI/UX Design -->
+      <div class="bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl gradient-medical flex items-center justify-center text-slate-900 font-bold">U</div>
+          <div>
+            <h3 class="font-bold text-lg">UI/UX Design</h3>
+            <p class="text-slate-400 text-sm">تم QOVES / macOS / پزشکی</p>
+          </div>
+        </div>
+        <div class="mb-3 flex justify-between">
+          <span>پیشرفت ماژول</span>
+          <span class="text-yellow-400 font-bold">۱۵٪</span>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-3 mb-4">
+          <div class="bg-yellow-400 h-3 rounded-full" style="width: 15%"></div>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> تعیین پالت رنگی (سبز فیروزه‌ای + س inseparable slate)</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> تعیین فونت‌ها</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> ساختار layout و RTL</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> کامپوننت‌های شبیه macOS/Notion</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> داشبورد و صفحه‌های اصلی</li>
+          <li class="flex items-center gap-2"><span class="text-slate-500">○</span> انیمیشن‌ها و micro-interactions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- File Statistics -->
+    <div class="bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800 mb-8">
+      <h3 class="font-bold text-xl mb-4">📁 آمار فایل‌ها</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+          <div class="text-3xl font-bold text-accent">۳۰</div>
+          <div class="text-slate-400 text-sm">فایل backend</div>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+          <div class="text-3xl font-bold text-yellow-400">۶</div>
+          <div class="text-slate-400 text-sm">فایل frontend</div>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+          <div class="text-3xl font-bold text-accent">۵</div>
+          <div class="text-slate-400 text-sm">دامنه backend</div>
+        </div>
+        <div class="text-center p-4 bg-slate-800/50 rounded-xl">
+          <div class="text-3xl font-bold text-accent">۲</div>
+          <div class="text-slate-400 text-sm">سرویس اصلی</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="bg-slate-900/50 backdrop-blur rounded-2xl p-6 border border-slate-800">
+      <h3 class="font-bold text-xl mb-4">🚀 گام‌های بعدی</h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-sm font-bold mt-0.5">۱</div>
+          <div>
+            <p class="font-medium">تکمیل کامپوننت‌های وب (۴۵٪ → ۷۰٪)</p>
+            <p class="text-slate-400 text-sm">ساخت صفحات داشبورد، اهداف، فوکوس، تدریس و اتوماسیون</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-sm font-bold mt-0.5">۲</div>
+          <div>
+            <p class="font-medium">اتصال frontend به backend API</p>
+            <p class="text-slate-400 text-sm">استفاده از TanStack Query و ایجاد hooks</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-sm font-bold mt-0.5">۳</div>
+          <div>
+            <p class="font-medium">شروع ساخت اپ موبایل Flutter</p>
+            <p class="text-slate-400 text-sm">اسکافولد پروژه و صفحات اصلی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-12 text-center text-slate-500 text-sm">
+      <p>تولید خودکار توسط Hermes Agent — ۲۹ ژوئن ۲۰۲۶</p>
+    </div>
+  </div>
+</body>
+</html>
