@@ -1,7 +1,7 @@
 "use client";
 
 import Link, { LinkProps } from "next/link";
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode, AnchorHTMLAttributes } from "react";
 
 type CommonButtonProps = {
   variant?: "primary" | "secondary" | "ghost";
@@ -15,8 +15,8 @@ type ButtonAsButton = CommonButtonProps &
   };
 
 type ButtonAsLink = CommonButtonProps &
-  LinkProps & {
-    as: "link";
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    as?: "link";
     href: string;
   };
 
@@ -26,25 +26,37 @@ export default function GlassButton({
   children,
   className = "",
   variant = "primary",
+  as = "button",
   ...props
 }: GlassButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60";
+    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#233137]/30 cursor-pointer";
+  
   const styles: Record<string, string> = {
-    primary:
-      "bg-gradient-to-b from-accent/90 to-accent-2/90 text-slate-900 hover:brightness-110 active:scale-[0.99] shadow-lg shadow-accent/10",
-    secondary:
-      "border border-white/10 bg-white/[0.06] text-foreground hover:bg-white/[0.09]",
-    ghost: "text-slate-300 hover:text-white hover:bg-white/6",
+    primary: "bg-white text-[#233137] border border-[#e8e8e8] hover:bg-[#fafafa] active:scale-[0.99]",
+    secondary: "bg-[#121212] text-white hover:bg-[#333e47] active:scale-[0.99]",
+    ghost: "text-[#515255] hover:text-[#233137] hover:bg-[#f2f5f5]",
   };
 
-  const element = (
-    <span className={`${base} ${styles[variant]} ${className}`}>{children}</span>
-  );
-
-  if (props.as === "link" && props.href) {
-    return <Link href={props.href}>{element}</Link>;
+  // If href is provided, render as a Next.js Link
+  if (as === "link") {
+    const href = (props as ButtonAsLink).href;
+    if (href) {
+      return (
+        <Link href={href} className={`${base} ${styles[variant]} ${className}`}>
+          {children}
+        </Link>
+      );
+    }
   }
 
-  return element;
+  // Otherwise, render as a standard HTML button
+  return (
+    <button
+      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+      className={`${base} ${styles[variant]} ${className}`}
+    >
+      {children}
+    </button>
+  );
 }
