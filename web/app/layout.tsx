@@ -1,10 +1,5 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,8 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fa" dir="rtl" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body className={`${inter.className} antialiased min-h-screen bg-background text-foreground`}>{children}</body>
+    <html lang="fa" dir="rtl" className={inter.variable} suppressHydrationWarning>
+      <body className={`${inter.className} antialiased min-h-screen bg-white text-[#233137]`}>{children}</body>
     </html>
   );
 }
