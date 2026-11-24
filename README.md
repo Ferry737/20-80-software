@@ -27,22 +27,21 @@ Full-stack monorepo: FastAPI backend, Next.js glass-UI web app, Flutter mobile c
 | **Auth** | JWT (`python-jose`) + bcrypt | Token auth, hashed passwords |
 | **Web** | Next.js · TypeScript · Tailwind · glass components | Fast, consistent UI |
 | **Mobile** | Flutter (`mobile/`) | Same API, native feel |
-| **Infra*** | `docker-compose.yml` with healthchecks | One command, whole stack |
+| **Infra** | `docker-compose.yml` with healthchecks | One command, whole stack |
 
 ## 🏗 Architecture
 
 ```
-┌────────────────────────┐   ┌──────────────────────┐        ┌─────────────────────────────────┐
-
-│  Flutter      │   │  Next.js web │        │  FastAPI backend             │
+┌─────────────┐   ┌──────────────┐        ┌──────────────────────────────┐
+│  Flutter     │   │  Next.js web │        │  FastAPI backend             │
 │  mobile      │──▶│  (port 3000) │──────▶ │  (port 8000)                 │
-└────────────────────┘   └─────────────────┘        │  config · database · main    │
-                                          └───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┘
-                                                     │       │       │
+└─────────────┘   └──────────────┘        │  config · database · main    │
+                                          └───────┬───────┬───────┬──────┘
+                                                  │       │       │
                                           ┌───────▼──┐ ┌──▼────┐ ┌▼─────────┐
                                           │ Postgres │ │ Redis │ │ ChromaDB │
                                           │  16      │ │  7    │ │  0.5     │
-                                          └──────────┘ └────────┘ └──────────┘
+                                          └──────────┘ └───────┘ └──────────┘
                                                        │
                                                  Celery workers
 ```
@@ -60,9 +59,9 @@ docker compose up --build
 |---|---|
 | Web | http://localhost:3000 |
 | API | http://localhost:8000 (docs at `/docs`) |
-| Postgres / Redis / Chroma | 5432 · 6379 ³ 8001 |
+| Postgres / Redis / Chroma | 5432 · 6379 · 8001 |
 
-## 📊 Repository layout
+## 📁 Repository layout
 
 ```
 20-80-software/
